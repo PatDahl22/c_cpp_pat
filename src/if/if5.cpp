@@ -3,10 +3,13 @@
 
 void if5_trip_cost()
 {
+    std::cout << "----------------------------------------" << std::endl;
     std::cout << "Select your category by entering a number:" << std::endl;
     std::cout << "1. Adult" << std::endl;
     std::cout << "2. Pensioner" << std::endl;
     std::cout << "3. Student" << std::endl;
+    std::cout << "" << std::endl;
+
     int category;
     std::cin >> category;
 

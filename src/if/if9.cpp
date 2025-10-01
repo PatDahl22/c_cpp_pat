@@ -5,6 +5,7 @@ using namespace std;
 void if9_pay_notes()
 {
     int amount;
+    cout << "----------------------------------------" << endl;
     cout << "Enter the amount to be paid: ";
     cin >> amount;
 

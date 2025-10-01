@@ -4,7 +4,7 @@
 void if3_fever_check()
 {
     float temp;
-    printf("What is your temperature like now?\t");
+    printf("What is your temperature like now? ");
     scanf("%f", &temp);
 
     if (temp > 39.5)

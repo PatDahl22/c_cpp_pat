@@ -5,12 +5,13 @@ using namespace std;  // Använd std-namnområdet för enkel åtkomst till cout 
 void if6_birth_decade()
 {
     int year;
+    cout << "----------------------------------------" << endl;
     cout << "Enter your birth year: ";
     cin >> year;
 
     if (year < 1980)
     {
-        cout << "Your year of birth is " << year << ".\n" "You were part of Baby Boomers (early 1960s) or part of Generation X.\n" << endl;
+        cout << "Your year of birth is " << year << ".\n" "You were part of Baby Boomers or part of Generation X.\n" << endl;
     }
     else if (year >= 1980 && year < 1990)
     {

@@ -4,6 +4,7 @@ using namespace std;
 
 void if7_country_check()
 {
+    cout << "----------------------------------------" << endl;
     cout << "Enter the number for your country:" << endl;
     cout << "1 Sweden" << endl;
     cout << "2 Denmark" << endl;

@@ -4,6 +4,7 @@
 void if4_age_check()
 {
     int age;
+    std::cout << "----------------------------------------" << std::endl;
     std::cout << "Enter your age: ";
     std::cin >> age;
 

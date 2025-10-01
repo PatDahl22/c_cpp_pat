@@ -6,6 +6,7 @@ void if8_meal_options()
 {
     double amount;                                           // Belopp
     char discount;                                           // Rabatt
+    cout << "----------------------------------------" << endl;
     cout << "Enter the amount of money you have: ";
     cin >> amount;
     cout << "Do you have a discount? (y/n): ";

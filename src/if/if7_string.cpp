@@ -20,6 +20,7 @@ void if7_string()
     vector<string> asia        = {"japan", "china", "thailand", "india", "vietnam", "malaysia", "indonesia", "philippines", "south korea", "north korea", "mongolia", "nepal", "bhutan", "bangladesh", "sri lanka", "cambodia", "laos", "myanmar", "afghanistan", "pakistan", "turkey", "georgia", "armenia", "azerbaijan", "russia"};
 
     // Input
+    cout << "----------------------------------------" << endl;
     cout << "Enter your country: ";
     string country;
     cin >> country;
