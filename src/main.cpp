@@ -1,5 +1,5 @@
 #include <iostream>
-#include <limits>   // för numeric_limits
+#include <limits> // för numeric_limits
 #include "if/if1.h"
 #include "if/if2.h"
 #include "if/if3.h"
@@ -11,12 +11,35 @@
 #include "if/if8.h"
 #include "if/if9.h"
 #include "if/switch1.h"
+#include "if/switch2.h"
+
 using namespace std;
 
-int main() {
+// bool fråga om användaren vill fortsätta
+bool ask_continue()
+{
+    string answer;
+    while (true)
+    {
+        cout << "\nDo you want to continue? (Yes/No): ";
+        cin >> answer;
+        for (auto &c : answer)
+            c = tolower(c);
+        if (answer == "yes" || answer == "y")
+            return true;
+        if (answer == "no" || answer == "n")
+            return false;
+        cout << "Please answer Yes or No." << endl;
+    }
+}
+
+// huvudprogram  , Om user vill fortsätta efter varje val
+int main()
+{
     int choice = -1;
 
-    while (choice != 0) {
+    while (choice != 0)
+    {
         cout << "\n----------------------------------------" << endl;
         cout << "=== MENU ===\n";
         cout << "1  = if1_example_function\n";
@@ -30,10 +53,13 @@ int main() {
         cout << "9  = if8_meal_options\n";
         cout << "10 = if9_pay_notes\n";
         cout << "11 = switch1_day_name\n";
+        cout << "12 = switch2_menu (Hamburger Menu)\n";
         cout << "0  = Exit\n";
         cout << "\nChoose option: ";
 
-        if (!(cin >> choice)) {
+        // Hantera felaktig inmatning, om användaren skriver något annat än ett nummer
+        if (!(cin >> choice))
+        {
             // Här hamnar vi om användaren skrev fel (t.ex. text)
             cout << "Invalid input, please enter a number.\n";
 
@@ -47,21 +73,65 @@ int main() {
             continue;
         }
 
-        switch (choice) {
-            case 1:  if1_example_function(); break;
-            case 2:  if2_milk_order(); break;
-            case 3:  if3_fever_check(); break;
-            case 4:  if4_age_check(); break;
-            case 5:  if5_trip_cost(); break;
-            case 6:  if6_birth_decade(); break;
-            case 7:  if7_country_check(); break;
-            case 8:  if7_string(); break;
-            case 9:  if8_meal_options(); break;
-            case 10: if9_pay_notes(); break;
-            case 11: switch1_day_name(); break;
-            case 0:  cout << "Exiting program...\n"; break;
-            default: cout << "Invalid choice, try again.\n";
+        bool continue_program = true; // variabel för att kontrollera om användaren vill fortsätta
+        switch (choice)               // välj alternativ
+        {
+        case 1:
+            if1_example_function();            // kör funktion
+            continue_program = ask_continue(); // fråga om användaren vill fortsätta
+            break;
+        case 2:
+            if2_milk_order();
+            continue_program = ask_continue();
+            break;
+        case 3:
+            if3_fever_check();
+            continue_program = ask_continue();
+            break;
+        case 4:
+            if4_age_check();
+            continue_program = ask_continue();
+            break;
+        case 5:
+            if5_trip_cost();
+            continue_program = ask_continue();
+            break;
+        case 6:
+            if6_birth_decade();
+            continue_program = ask_continue();
+            break;
+        case 7:
+            if7_country_check();
+            continue_program = ask_continue();
+            break;
+        case 8:
+            if7_string();
+            continue_program = ask_continue();
+            break;
+        case 9:
+            if8_meal_options();
+            continue_program = ask_continue();
+            break;
+        case 10:
+            if9_pay_notes();
+            continue_program = ask_continue();
+            break;
+        case 11:
+            switch1_day_name();
+            continue_program = ask_continue();
+            break;
+        case 12:
+            switch2_menu();
+            continue_program = ask_continue();
+            break;
+        case 0:
+            cout << "Exiting program...\n"; // avsluta program om användaren väljer 0
+            break;                          // bryt switch-satsen, kör inte ask_continue här
+        default:
+            cout << "Invalid choice, try again.\n";
         }
+        if (!continue_program || choice == 0)
+            break;
     }
 
     return 0;
