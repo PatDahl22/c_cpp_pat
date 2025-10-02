@@ -66,29 +66,36 @@ void switch2_menu()
             continue;
         }
         total_cost += cost;
-        cout << "Add more from the menu? (y/n): ";
+        cout << "Add more from the menu? (y/n): ";    // fråga om användaren vill lägga till mer
         char more;
         cin >> more;
         add_more = (more == 'y' || more == 'Y');
-    } while (add_more);
+    } while (add_more);           // Fortsätt så länge användaren vill lägga till mer
 
     // Print order details
     cout << "\n--- ORDER DETAILS ---" << endl;
-    if (order_counts[1])
+    if (order_counts[1])    // Kontrollera om någon beställde Small Hamburg
         cout << order_counts[1] << " x Small Hamburg 30 kr" << endl;
-    if (order_counts[2])
+    if (order_counts[2])   // Kontrollera om någon beställde Medium Hamburg
         cout << order_counts[2] << " x Medium Hamburg 50 kr" << endl;
-    if (order_counts[3])
+    if (order_counts[3])   // Kontrollera om någon beställde Big Hamburg 150g
         cout << order_counts[3] << " x Big Hamburg 150g 65 kr" << endl;
-    if (order_counts[4])
+    if (order_counts[4])   // Kontrollera om någon beställde Big Hamburg 300g
         cout << order_counts[4] << " x Big Hamburg 300g 95 kr" << endl;
-    if (order_counts[5])
+    if (order_counts[5])   // Kontrollera om någon beställde Regular French fries
         cout << order_counts[5] << " x Regular French fries 15 kr" << endl;
-    if (order_counts[6])
+    if (order_counts[6])   // Kontrollera om någon beställde Large French fries
         cout << order_counts[6] << " x Large French fries 10 kr extra" << endl;
-    if (order_counts[7])
+    if (order_counts[7])   // Kontrollera om någon beställde Small soft drink
         cout << order_counts[7] << " x Small soft drink 15 kr" << endl;
     cout << "Total order cost: " << total_cost << " kr" << endl;
+    // count total ordered items and total cost
+    int total_items = 0;
+    for (int i = 1; i <= 7; i++)
+    {
+        total_items += order_counts[i];
+    }
+    cout << "Total items ordered: " << total_items << endl;
 
     // Points logic after all orders
     cout << "Do you have and want to use points? (y/n): ";
