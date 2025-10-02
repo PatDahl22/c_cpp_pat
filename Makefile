@@ -2,7 +2,7 @@
 CC      = gcc
 CXX     = g++
 
-# Språk & varningar
+# Standarder & varningar
 CSTD    = -std=c11
 CXXSTD  = -std=c++17
 WARN    = -Wall -Wextra -Wpedantic
@@ -44,6 +44,7 @@ $(BIN): $(OBJECTS)
 	@mkdir -p $(dir $@)
 	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)
 
+# build-file samla in alla .o och .d filer i build/
 # C: bygg + depfile (-MMD -MP)
 build/%.c.o: src/%.c
 	@mkdir -p $(@D)
@@ -68,3 +69,4 @@ tree:
 	@echo "C_SOURCES:"; echo "$(C_SOURCES)" | tr ' ' '\n'
 	@echo "CPP_SOURCES:"; echo "$(CPP_SOURCES)" | tr ' ' '\n'
 	@echo "OBJECTS:"; echo "$(OBJECTS)" | tr ' ' '\n'
+

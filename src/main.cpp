@@ -13,6 +13,12 @@
 #include "if/switch1.h"
 #include "if/switch2.h"
 
+#include "loop/loop1.h"
+#include "loop/loop2.h"
+#include "loop/loop3.h"
+#include "loop/loop4.h"
+#include "loop/loop5.h"
+
 using namespace std;
 
 // bool fråga om användaren vill fortsätta
@@ -21,7 +27,7 @@ bool ask_continue()
     string answer;
     while (true)
     {
-        cout << "\nDo you want to continue? (Yes/No): ";
+        cout << "\nDo you want to continue with another function? (Yes/No): ";
         cin >> answer;
         for (auto &c : answer)
             c = tolower(c);
@@ -54,6 +60,11 @@ int main()
         cout << "10 = if9_pay_notes\n";
         cout << "11 = switch1_day_name\n";
         cout << "12 = switch2_menu (Hamburger Menu)\n";
+        cout << "13 = print_numbers_loop\n";
+        cout << "14 = print_range_loop\n";
+        cout << "15 = sum_and_repeat (Sum and repeat)\n";
+        cout << "16 = sum_ten_numbers (Sum of 10 numbers)\n";
+        cout << "17 = analyze_number (Analyze number)\n";
         cout << "0  = Exit\n";
         cout << "\nChoose option: ";
 
@@ -79,14 +90,6 @@ int main()
         case 1:
             if1_example_function();            // kör funktion
             continue_program = ask_continue(); // fråga om användaren vill fortsätta
-            break;
-        case 2:
-            if2_milk_order();
-            continue_program = ask_continue();
-            break;
-        case 3:
-            if3_fever_check();
-            continue_program = ask_continue();
             break;
         case 4:
             if4_age_check();
@@ -122,6 +125,26 @@ int main()
             break;
         case 12:
             switch2_menu();
+            continue_program = ask_continue();
+            break;
+        case 13:
+            print_numbers_loop();
+            continue_program = ask_continue();
+            break;
+        case 14:
+            print_range_loop();
+            continue_program = ask_continue();
+            break;
+        case 15:
+            sum_and_repeat();
+            continue_program = ask_continue();
+            break;
+        case 16:
+            sum_ten_numbers();
+            continue_program = ask_continue();
+            break;
+        case 17:
+            analyze_number();
             continue_program = ask_continue();
             break;
         case 0:
