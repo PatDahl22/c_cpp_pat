@@ -99,11 +99,12 @@ void switch2_menu()
 
     // Points logic after all orders
     cout << "Do you have and want to use points? (y/n): ";
-    char use_points;
-    cin >> use_points;
-    int points_used = 0, available_points = 0;
-    int cost_to_pay = total_cost;
-    if (use_points == 'y' || use_points == 'Y')
+    // fråga om användaren vill använda poäng
+    char use_points;                  // variabel för att lagra användarens svar
+    cin >> use_points;                // läsa in användarens svar
+    int points_used = 0, available_points = 0;    // variabler för att lagra använda och tillgängliga poäng
+    int cost_to_pay = total_cost;                 // kostnad att betala efter poänganvändning
+    if (use_points == 'y' || use_points == 'Y')   // om användaren vill använda poäng
     {
         cout << "How many points do you have? ";
         cin >> available_points;
