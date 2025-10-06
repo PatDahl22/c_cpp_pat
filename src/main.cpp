@@ -18,6 +18,7 @@
 #include "loop/loop3.h"
 #include "loop/loop4.h"
 #include "loop/loop5.h"
+#include "loop/loop6.h"
 
 using namespace std;
 
@@ -65,6 +66,7 @@ int main()
         cout << "15 = sum_and_repeat (Sum and repeat)\n";
         cout << "16 = sum_ten_numbers (Sum of 10 numbers)\n";
         cout << "17 = analyze_number (Analyze number)\n";
+        cout << "18 = roll_dice (Roll dice)\n";
         cout << "0  = Exit\n";
         cout << "\nChoose option: ";
 
@@ -145,6 +147,10 @@ int main()
             break;
         case 17:
             analyze_number();
+            continue_program = ask_continue();
+            break;
+        case 18:
+            roll_dice();
             continue_program = ask_continue();
             break;
         case 0:
