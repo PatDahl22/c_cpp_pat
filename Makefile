@@ -38,8 +38,9 @@ BIN = bin/app
 
 .PHONY: all run clean tree
 
+# Standardmål (bygg allt)
 all: $(BIN)
-
+# Länka ihop alla objekt till en binär
 $(BIN): $(OBJECTS)
 	@mkdir -p $(dir $@)
 	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)
